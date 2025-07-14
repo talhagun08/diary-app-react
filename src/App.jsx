@@ -75,7 +75,7 @@ function DiaryApp() {
       entry.content.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const moods = ["😊", "😢", "😴", "😍", "😡", "🤔", "😂", "😌"];
+  const moods = ["😊", "😢", "😴", "😍", "😡", "🤔", "😂", "😌", "😔"];
 
   return (
     <div
