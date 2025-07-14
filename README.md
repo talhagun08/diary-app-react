@@ -26,4 +26,4 @@ This project was created to **practice React's `useState` hook in a practical, r
 
 1️⃣ Clone the repository:
 ```bash
-git clone https://github.com/yourusername/diary-app.git
+git clone https://github.com/talhagun08/diary-app.git
