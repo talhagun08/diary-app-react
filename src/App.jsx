@@ -68,6 +68,7 @@ function DiaryApp() {
     setSelectedMood("😊");
     setIsWriting(false);
   };
+
   const filteredEntries = entries.filter(
     (entry) =>
       entry.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -75,6 +76,7 @@ function DiaryApp() {
   );
 
   const moods = ["😊", "😢", "😴", "😍", "😡", "🤔", "😂", "😌"];
+
   return (
     <div
       className={`min-h-screen transition-colors duration-300 ${
@@ -84,25 +86,26 @@ function DiaryApp() {
       }`}
     >
       <div className="container mx-auto px-4 py-8 max-w-4xl">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
+          <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             My Diary
           </h1>
-          <div className="flex items-center gap-4">
-            <div className="relative">
-              <Search className=" absolute left-3 top-3 h-4 w-4 text-gray-400"></Search>
+          <div className="flex flex-wrap gap-2 items-center justify-center sm:justify-start">
+            <div className="relative flex-grow sm:flex-grow-0 w-full sm:w-auto">
+              <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className={`pl-10 pr-4 py-2 rounded-lg border ${
+                className={`pl-10 pr-4 py-2 rounded-lg border w-full sm:w-auto ${
                   isDarkMode
                     ? "bg-gray-800 border-gray-700 text-white"
                     : "bg-white border-gray-300"
                 } focus:outline-none focus:ring-2 focus:ring-blue-500`}
               />
             </div>
+
             <button
               onClick={() => setIsDarkMode(!isDarkMode)}
               className={`p-2 rounded-lg transition-colors ${
@@ -117,18 +120,20 @@ function DiaryApp() {
                 <Moon className="h-5 w-5" />
               )}
             </button>
+
             <button
               onClick={() => setIsWriting(!isWriting)}
-              className="flex items-center gap-2 bg-blue-600 rounded-lg text-white px-4 py-2 hover:bg-blue-700 transition-colors"
+              className="flex items-center gap-2 bg-blue-600 rounded-lg text-white px-4 py-2 hover:bg-blue-700 transition-colors whitespace-nowrap"
             >
               <PlusCircle className="h-5 w-5" />
               New Save
             </button>
           </div>
         </div>
+
         {isWriting && (
           <div
-            className={`mb-8 p-6 rounded-xl shadow-lg ${
+            className={`mb-8 p-4 sm:p-6 rounded-xl shadow-lg ${
               isDarkMode ? "bg-gray-800" : "bg-white"
             }`}
           >
@@ -147,8 +152,8 @@ function DiaryApp() {
               } focus:outline-none focus:ring-2 focus:ring-blue-500`}
             />
             <div className="mb-4">
-              <label className=" block text-sm font-medium mb-2">My Mood</label>
-              <div className="flex gap-2">
+              <label className="block text-sm font-medium mb-2">My Mood</label>
+              <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
                 {moods.map((mood) => (
                   <button
                     key={mood}
@@ -180,11 +185,11 @@ function DiaryApp() {
                   : "bg-gray-50 border-gray-300 placeholder-gray-500"
               } focus:outline-none focus:ring-2 focus:ring-blue-500`}
             />
-            <div className="flex gap-3 mt-4">
+            <div className="flex flex-wrap gap-3 mt-4 justify-center sm:justify-start">
               <button
                 onClick={editingId ? saveEdit : addEntry}
                 disabled={!currentEntry.trim() || !currentTitle.trim()}
-                className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 disabled:bg-gray-400 transition-colors"
+                className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 disabled:bg-gray-400 transition-colors whitespace-nowrap"
               >
                 {editingId ? "Update" : "Save"}
               </button>
@@ -197,7 +202,7 @@ function DiaryApp() {
                   setCurrentTitle("");
                   setSelectedMood("😊");
                 }}
-                className={`px-6 py-2 rounded-lg transition-colors ${
+                className={`px-6 py-2 rounded-lg transition-colors whitespace-nowrap ${
                   isDarkMode
                     ? "bg-gray-700 hover:bg-gray-600"
                     : "bg-gray-200 hover:bg-gray-300"
@@ -208,6 +213,7 @@ function DiaryApp() {
             </div>
           </div>
         )}
+
         <div className="space-y-4">
           {filteredEntries.length === 0 ? (
             <div
@@ -222,7 +228,7 @@ function DiaryApp() {
               return (
                 <div
                   key={entry.id}
-                  className={`p-6 rounded-xl shadow-lg transition-all hover:shadow-xl ${
+                  className={`p-4 sm:p-6 rounded-xl shadow-lg transition-all hover:shadow-xl ${
                     isDarkMode ? "bg-gray-800" : "bg-white"
                   }`}
                 >
@@ -246,7 +252,7 @@ function DiaryApp() {
                             : "hover:bg-gray-100 text-blue-600"
                         }`}
                       >
-                        <Edit2 className="h-4 w-4"></Edit2>
+                        <Edit2 className="h-4 w-4" />
                       </button>
                       <button
                         onClick={() => {
@@ -258,7 +264,7 @@ function DiaryApp() {
                             : "hover:bg-gray-100 text-red-600"
                         }`}
                       >
-                        <Trash2 className="h-4 w-4"></Trash2>
+                        <Trash2 className="h-4 w-4" />
                       </button>
                     </div>
                   </div>
