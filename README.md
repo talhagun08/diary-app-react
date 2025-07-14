@@ -1,12 +1,29 @@
-# React + Vite
+# 📘 My Diary App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple yet functional diary application built with **React** to practice the `useState` hook and component state management while designing a clean, responsive interface using **Tailwind CSS**.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✅ Add new diary entries with title, content, date, and mood  
+✅ Edit and update existing entries  
+✅ Delete entries  
+✅ Search entries by title or content  
+✅ Dark mode toggle  
+✅ Emoji-based mood selection  
+✅ Responsive and clean UI with Tailwind CSS
 
-## Expanding the ESLint configuration
+## 🎯 Purpose
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project was created to **practice React's `useState` hook in a practical, real-world scenario** while learning:
+
+- CRUD operations in React
+- State management and controlled inputs
+- Theming with dark/light mode using state
+- Building clean, responsive layouts with Tailwind CSS
+- Using icons with lucide-react for a modern look
+
+## 🚀 Getting Started
+
+1️⃣ Clone the repository:
+```bash
+git clone https://github.com/yourusername/diary-app.git
